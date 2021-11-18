@@ -1,12 +1,33 @@
 import logoMarvel from '../assets/img/logoMarvelHD.png';
-const Header = () => {
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
+const Header = ({ setSearchValue }) => {
+  const location = useLocation();
+
+  const handleSearch = (event) => {
+    if (location.pathname === '/comics') {
+      setSearchValue(event.target.value);
+    }
+  };
+
   return (
     <div className="header">
-      <img className="logo-site" src={logoMarvel} alt="logo-site-marvel" />
+      <Link to="/">
+        <img className="logo-site" src={logoMarvel} alt="logo-site-marvel" />
+      </Link>
+
+      <input type="text" onChange={handleSearch} />
+
       <div>
-        <button>Personnages</button>
-        <button>Comics</button>
-        <button>Favoris</button>
+        <Link to="/">
+          <button>Personnages</button>
+        </Link>
+        <Link to="/comics">
+          <button>Comics</button>
+        </Link>
+        <Link to="/favoris">
+          <button>Favoris</button>
+        </Link>
       </div>
     </div>
   );

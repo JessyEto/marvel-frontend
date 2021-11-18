@@ -32,8 +32,8 @@ const Character = () => {
           src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
           alt="character-view-single"
         />
-        <p>{data.name}</p>
-        <p>{data.description}</p>
+        <p className="character-name">{data.name}</p>
+        <p className="character-description">{data.description}</p>
       </div>
       <div className="character-carrousel">
         {data.comics.map((elem) => {

@@ -7,6 +7,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // retrieve data from backend
     const fetchData = async () => {
       try {
         const response = await axios.get(

@@ -2,9 +2,17 @@
 
 /* ------------ GLOBAL ------------- */
 
+/* body {
+  background-color: #1a1b1d;
+} */
 .container {
+  /* background-color: black; */
   width: 1284px;
   margin: 0 auto;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* ------------ HEADER --------------- */
@@ -76,7 +84,7 @@
 /* ------------------------- CHARACTER -------------------- */
 
 .character {
-  background-color: green;
+  /* background-color: green; */
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
@@ -85,8 +93,12 @@
 }
 
 .character-view {
-  border: solid 1px black;
-  width: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid 1px black; */
+  width: 300px;
 }
 .character-single {
   height: 350px;
@@ -95,17 +107,20 @@
 }
 
 .character-carrousel {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   overflow: scroll;
-  width: 700px;
-  border: solid 1px red;
+  width: 800px;
+  border: solid 3px red;
+  border-radius: 10px;
   padding: 20px 20px;
 }
 
 .character-carrousel > div {
   display: flex;
+  height: 150px;
   margin-bottom: 10px;
 }
 
@@ -116,8 +131,54 @@
   margin-right: 20px;
 }
 
+.character-carrousel > div > div {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow: scroll;
+}
+
 .comic-char-title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* ------------------ COMICS -------------------- */
+
+.comics {
+  /* background-color: black; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.comics > div {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px black;
+  width: 400px;
+  margin-bottom: 30px;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+
+.comic-page-pic {
+  height: 400px;
+  width: 300px;
+  object-fit: contain;
+}
+
+.comic-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.comic-description {
+  text-align: justify;
 }
