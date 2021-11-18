@@ -1,29 +1,29 @@
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+// import { useEffect, useState } from 'react';
+// import axios from 'axios';
 
-const Home = () => {
-  const [dataCharacters, setDataCharacters] = useState({});
-  const [loading, setLoading] = useState(true);
+const Home = ({ dataCharacters, isLoadingHome }) => {
+  // const [dataCharacters, setDataCharacters] = useState({});
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // retrieve data from backend
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://marvel-api-backend.herokuapp.com/characters'
-        );
-        // console.log(response.data);
-        setDataCharacters(response.data);
-        setLoading(false);
-      } catch (error) {
-        alert(error.message);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   // retrieve data from backend
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         'https://marvel-api-backend.herokuapp.com/characters'
+  //       );
+  //       // console.log(response.data);
+  //       setDataCharacters(response.data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       alert(error.message);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
-  return loading ? (
+  return isLoadingHome ? (
     <div>chargement en cours</div>
   ) : (
     <div className="container home">

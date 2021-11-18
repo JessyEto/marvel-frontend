@@ -1,12 +1,16 @@
 import logoMarvel from '../assets/img/logoMarvelHD.png';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
-const Header = ({ setSearchValue }) => {
+const Header = ({ setSearchValue, setSearchCharacter }) => {
   const location = useLocation();
 
   const handleSearch = (event) => {
     if (location.pathname === '/comics') {
       setSearchValue(event.target.value);
+    }
+
+    if (location.pathname === '/') {
+      setSearchCharacter(event.target.value);
     }
   };
 
