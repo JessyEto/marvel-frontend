@@ -11,16 +11,23 @@ import Comics from './pages/Comics';
 import Favoris from './pages/Favoris';
 
 const App = () => {
+  // State to store data received after server been called
   const [dataToSearch, setDataToSearch] = useState({});
   const [dataCharacters, setDataCharacters] = useState({});
 
+  // State to track the inout value on search bar based on the page
   const [searchValue, setSearchValue] = useState('');
   const [searchCharacter, setSearchCharacter] = useState('');
 
+  // State to check the fetch of data status
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingHome, setIsLoadingHome] = useState(true);
 
+  // Page states
+  const [pageNumber, setPageNumber] = useState(1);
+
   useEffect(() => {
+    // search based on query for comics page
     if (searchValue) {
       const fetchData = async () => {
         const response = await axios.get(
@@ -41,26 +48,30 @@ const App = () => {
       fetchData();
     }
 
-    if (searchCharacter) {
+    // search based on query for character/home page
+    if (searchCharacter || pageNumber >= 1) {
       const fetchData = async () => {
         const response = await axios.get(
-          `https://marvel-api-backend.herokuapp.com/characters?name=${searchCharacter}`
-        );
-        setDataCharacters(response.data);
-        setIsLoadingHome(false);
-      };
-      fetchData();
-    } else {
-      const fetchData = async () => {
-        const response = await axios.get(
-          `https://marvel-api-backend.herokuapp.com/characters`
+          `https://marvel-api-backend.herokuapp.com/characters?limit=${100}&skip=${
+            (pageNumber - 1) * 100
+          }&name=${searchCharacter}`
         );
         setDataCharacters(response.data);
         setIsLoadingHome(false);
       };
       fetchData();
     }
-  }, [searchValue, searchCharacter]);
+    // else {
+    //   const fetchData = async () => {
+    //     const response = await axios.get(
+    //       `https://marvel-api-backend.herokuapp.com/characters`
+    //     );
+    //     setDataCharacters(response.data);
+    //     setIsLoadingHome(false);
+    //   };
+    //   fetchData();
+    // }
+  }, [searchValue, searchCharacter, pageNumber]);
 
   return (
     <Router>
@@ -75,6 +86,7 @@ const App = () => {
             <Home
               dataCharacters={dataCharacters}
               isLoadingHome={isLoadingHome}
+              setPageNumber={setPageNumber}
             />
           }
         />

@@ -41,6 +41,10 @@ button:hover {
 
 /* ---------------- HOME ----------------- */
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
 .home {
   display: flex;
   justify-content: space-between;
@@ -81,6 +85,9 @@ button:hover {
   text-align: justify;
 }
 
+.characters-pages {
+  background-color: green;
+}
 /* ------------------------- CHARACTER -------------------- */
 
 .character {
