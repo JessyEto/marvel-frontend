@@ -1,1 +1,123 @@
 /* Other rules */
+
+/* ------------ GLOBAL ------------- */
+
+.container {
+  width: 1284px;
+  margin: 0 auto;
+}
+
+/* ------------ HEADER --------------- */
+
+.logo-site {
+  height: 40px;
+  border-radius: 2px;
+}
+
+.header {
+  background-color: black;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 40px;
+}
+
+.header > div {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+
+/* ---------------- HOME ----------------- */
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.character-link > div {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 430px;
+  border: solid 1px black;
+  margin-bottom: 30px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.character-comic {
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.character-link {
+  text-decoration: none;
+  color: black;
+}
+
+.character-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.character-description {
+  text-align: justify;
+}
+
+/* ------------------------- CHARACTER -------------------- */
+
+.character {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 500px;
+}
+
+.character-view {
+  border: solid 1px black;
+  width: 500px;
+}
+.character-single {
+  height: 350px;
+  width: 250px;
+  object-fit: cover;
+}
+
+.character-carrousel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow: scroll;
+  width: 700px;
+  border: solid 1px red;
+  padding: 20px 20px;
+}
+
+.character-carrousel > div {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comic-pic {
+  height: 150px;
+  width: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.comic-char-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
