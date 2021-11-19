@@ -1,4 +1,10 @@
-const Comics = ({ dataToSearch, isLoading, setPageNumberComics }) => {
+const Comics = ({
+  dataToSearch,
+  isLoading,
+  setPageNumberComics,
+  setFavComics,
+  favComics,
+}) => {
   // how many page to be displayed
   const pageTotal = Math.ceil(dataToSearch.count / 100);
 
@@ -30,6 +36,16 @@ const Comics = ({ dataToSearch, isLoading, setPageNumberComics }) => {
               />
               <p className="comic-title">{elem.title}</p>
               <p className="comic-description">{elem.description}</p>
+              <p
+                className="fav-comics-button"
+                onClick={() => {
+                  const newFavComicTab = [...favComics];
+                  newFavComicTab.push(JSON.stringify(elem));
+                  setFavComics(newFavComicTab);
+                }}
+              >
+                Add to favoris
+              </p>
             </div>
           );
         })}

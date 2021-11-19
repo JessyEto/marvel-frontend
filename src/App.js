@@ -32,10 +32,18 @@ const App = () => {
     JSON.parse(localStorage.getItem('myCharacter')) || []
   );
 
-  // Use effect for Character fav
+  //  state for comics Favoris
+  const [favComics, setFavComics] = useState([]);
+
+  // Use effect for Character favoris
   useEffect(() => {
     localStorage.setItem('myCharacter', JSON.stringify(favCharacter));
   }, [favCharacter]);
+
+  // Use effect for comics Favoris
+  useEffect(() => {
+    localStorage.setItem('myComic', JSON.stringify(favComics));
+  }, [favComics]);
 
   useEffect(() => {
     // search based on query for comics page
@@ -94,12 +102,16 @@ const App = () => {
               dataToSearch={dataToSearch}
               isLoading={isLoading}
               setPageNumberComics={setPageNumberComics}
+              setFavComics={setFavComics}
+              favComics={favComics}
             />
           }
         />
         <Route
           path="/favoris"
-          element={<Favoris favCharacter={favCharacter} />}
+          element={
+            <Favoris favCharacter={favCharacter} favComics={favComics} />
+          }
         />
       </Routes>
     </Router>

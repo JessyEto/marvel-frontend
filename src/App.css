@@ -249,6 +249,18 @@ button:hover {
   text-align: justify;
 }
 
+.fav-comics-button {
+  border: solid 1px black;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.fav-comics-button:hover {
+  cursor: pointer;
+  background-color: green;
+}
+
 .comics-pages > button {
   background-color: #ee181e;
   color: white;
