@@ -44,6 +44,7 @@ button:hover {
 .home-container {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 .home {
   display: flex;
@@ -91,7 +92,7 @@ button:hover {
   justify-content: center;
 }
 
-.characters-pages > li {
+.characters-pages > button {
   background-color: #ee181e;
   color: white;
   font-weight: bold;
@@ -105,13 +106,22 @@ button:hover {
   margin-right: 3px;
 }
 
-.characters-pages > li:hover {
-  cursor: pointer;
-}
-
-.characters-pages > li:last-child {
+.characters-pages > button:last-child {
   margin-right: 0px;
 }
+
+.characters-pages > button:hover {
+  cursor: pointer;
+  background-color: black;
+  color: #ee181e;
+}
+
+.page-box:focus {
+  cursor: pointer;
+  background-color: black;
+  color: #ee181e;
+}
+
 /* ------------------------- CHARACTER -------------------- */
 
 .character {
@@ -176,7 +186,12 @@ button:hover {
 }
 
 /* ------------------ COMICS -------------------- */
-
+.comics-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
 .comics {
   /* background-color: black; */
   display: flex;
@@ -212,4 +227,39 @@ button:hover {
 
 .comic-description {
   text-align: justify;
+}
+
+.comics-pages > button {
+  background-color: #ee181e;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  border-radius: 2px;
+  width: 25px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.comics-pages {
+  /* background-color: green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.comics-pages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.comics-pages {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

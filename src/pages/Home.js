@@ -40,20 +40,21 @@ const Home = ({ dataCharacters, isLoadingHome, setPageNumber }) => {
           );
         })}
       </div>
-      <ul className="characters-pages">
+      <div className="characters-pages">
         {tabPages.map((elem, index) => {
           return (
-            <li
+            <button
+              className="page-box"
               onClick={() => {
                 handlePageChange(elem);
               }}
               key={index}
             >
               {elem}
-            </li>
+            </button>
           );
         })}
-      </ul>
+      </div>
     </div>
   );
 };

@@ -25,28 +25,32 @@ const App = () => {
 
   // Page states
   const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumberComics, setPageNumberComics] = useState(1);
 
   useEffect(() => {
     // search based on query for comics page
-    if (searchValue) {
+    if (searchValue || pageNumberComics >= 1) {
       const fetchData = async () => {
         const response = await axios.get(
-          `https://marvel-api-backend.herokuapp.com/comics?title=${searchValue}`
-        );
-        setDataToSearch(response.data);
-        setIsLoading(false);
-      };
-      fetchData();
-    } else {
-      const fetchData = async () => {
-        const response = await axios.get(
-          `https://marvel-api-backend.herokuapp.com/comics`
+          `https://marvel-api-backend.herokuapp.com/comics?limit=${100}&skip=${
+            (pageNumberComics - 1) * 100
+          }&title=${searchValue}`
         );
         setDataToSearch(response.data);
         setIsLoading(false);
       };
       fetchData();
     }
+    // else {
+    //   const fetchData = async () => {
+    //     const response = await axios.get(
+    //       `https://marvel-api-backend.herokuapp.com/comics`
+    //     );
+    //     setDataToSearch(response.data);
+    //     setIsLoading(false);
+    //   };
+    //   fetchData();
+    // }
 
     // search based on query for character/home page
     if (searchCharacter || pageNumber >= 1) {
@@ -61,17 +65,7 @@ const App = () => {
       };
       fetchData();
     }
-    // else {
-    //   const fetchData = async () => {
-    //     const response = await axios.get(
-    //       `https://marvel-api-backend.herokuapp.com/characters`
-    //     );
-    //     setDataCharacters(response.data);
-    //     setIsLoadingHome(false);
-    //   };
-    //   fetchData();
-    // }
-  }, [searchValue, searchCharacter, pageNumber]);
+  }, [searchValue, searchCharacter, pageNumber, pageNumberComics]);
 
   return (
     <Router>
@@ -93,7 +87,13 @@ const App = () => {
         <Route path="/character/:id" element={<Character />} />
         <Route
           path="/comics"
-          element={<Comics dataToSearch={dataToSearch} isLoading={isLoading} />}
+          element={
+            <Comics
+              dataToSearch={dataToSearch}
+              isLoading={isLoading}
+              setPageNumberComics={setPageNumberComics}
+            />
+          }
         />
         <Route path="/favoris" element={<Favoris />} />
       </Routes>
