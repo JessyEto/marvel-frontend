@@ -27,6 +27,16 @@ const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [pageNumberComics, setPageNumberComics] = useState(1);
 
+  // state for Character Favoris
+  const [favCharacter, setFavCharacter] = useState(
+    JSON.parse(localStorage.getItem('myCharacter')) || []
+  );
+
+  // Use effect for Character fav
+  useEffect(() => {
+    localStorage.setItem('myCharacter', JSON.stringify(favCharacter));
+  }, [favCharacter]);
+
   useEffect(() => {
     // search based on query for comics page
     if (searchValue || pageNumberComics >= 1) {
@@ -41,16 +51,6 @@ const App = () => {
       };
       fetchData();
     }
-    // else {
-    //   const fetchData = async () => {
-    //     const response = await axios.get(
-    //       `https://marvel-api-backend.herokuapp.com/comics`
-    //     );
-    //     setDataToSearch(response.data);
-    //     setIsLoading(false);
-    //   };
-    //   fetchData();
-    // }
 
     // search based on query for character/home page
     if (searchCharacter || pageNumber >= 1) {
@@ -81,6 +81,8 @@ const App = () => {
               dataCharacters={dataCharacters}
               isLoadingHome={isLoadingHome}
               setPageNumber={setPageNumber}
+              setFavCharacter={setFavCharacter}
+              favCharacter={favCharacter}
             />
           }
         />
@@ -95,7 +97,10 @@ const App = () => {
             />
           }
         />
-        <Route path="/favoris" element={<Favoris />} />
+        <Route
+          path="/favoris"
+          element={<Favoris favCharacter={favCharacter} />}
+        />
       </Routes>
     </Router>
   );
