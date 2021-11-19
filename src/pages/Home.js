@@ -7,10 +7,12 @@ const Home = ({ dataCharacters, isLoadingHome, setPageNumber }) => {
   const tabPages = [];
   // iterate to create a tab with all pages to be add
   for (let i = 0; i < pageTotal; i++) {
-    tabPages.push(`Page ${i + 1}`);
+    tabPages.push(i + 1);
   }
-  const handlePageSearch = () => {
-    setPageNumber(6);
+
+  // modify the call based on the page clicked
+  const handlePageChange = (page) => {
+    setPageNumber(page);
   };
 
   return isLoadingHome ? (
@@ -38,15 +40,20 @@ const Home = ({ dataCharacters, isLoadingHome, setPageNumber }) => {
           );
         })}
       </div>
-      <div className="characters-pages">
+      <ul className="characters-pages">
         {tabPages.map((elem, index) => {
           return (
-            <button onClick={handlePageSearch} key={index}>
+            <li
+              onClick={() => {
+                handlePageChange(elem);
+              }}
+              key={index}
+            >
               {elem}
-            </button>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };
