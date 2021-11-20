@@ -4,7 +4,7 @@ const Favoris = ({ favCharacter, favComics }) => {
     <div className="container favoris">
       {favCharacter.map((favElem, index) => {
         return (
-          <div key={index}>
+          <div className="fav-character" key={index}>
             <img
               className="favoris-pic"
               src={`${JSON.parse(favElem).thumbnail.path}.${
@@ -19,16 +19,16 @@ const Favoris = ({ favCharacter, favComics }) => {
       })}
       {favComics.map((favElem, index) => {
         return (
-          <div key={index}>
+          <div className="fav-comic" key={index}>
             <img
-              className="comic-page-pic"
+              className="fav-comic-page-pic"
               src={`${JSON.parse(favElem).thumbnail.path}.${
                 JSON.parse(favElem).thumbnail.extension
               }`}
               alt="comic-page-pic"
             />
-            <p className="comic-title">{JSON.parse(favElem).title}</p>
-            <p className="comic-description">
+            <p className="fav-comic-title">{JSON.parse(favElem).title}</p>
+            <p className="fav-comic-description">
               {JSON.parse(favElem).description}
             </p>
           </div>

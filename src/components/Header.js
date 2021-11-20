@@ -16,22 +16,29 @@ const Header = ({ setSearchValue, setSearchCharacter }) => {
 
   return (
     <div className="header">
-      <Link to="/">
-        <img className="logo-site" src={logoMarvel} alt="logo-site-marvel" />
-      </Link>
-
-      <input type="text" onChange={handleSearch} />
-
-      <div>
+      <div className="hear-content">
         <Link to="/">
-          <button>Personnages</button>
+          <img className="logo-site" src={logoMarvel} alt="logo-site-marvel" />
         </Link>
-        <Link to="/comics">
-          <button>Comics</button>
-        </Link>
-        <Link to="/favoris">
-          <button>Favoris</button>
-        </Link>
+
+        <input
+          className="input-header-search"
+          type="text"
+          placeholder="Find your character ou comic"
+          onChange={handleSearch}
+        />
+
+        <div>
+          <Link to="/">
+            <button className="header-character">Personnages</button>
+          </Link>
+          <Link to="/comics">
+            <button className="header-comics">Comics</button>
+          </Link>
+          <Link to="/favoris">
+            <button className="header-favoris">Favoris</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

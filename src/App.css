@@ -9,6 +9,7 @@
   /* background-color: black; */
   width: 1284px;
   margin: 0 auto;
+  margin-top: 70px;
 }
 
 button:hover {
@@ -22,9 +23,8 @@ button:hover {
   border-radius: 2px;
 }
 
-.header {
+.hear-content {
   background-color: black;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,11 +32,46 @@ button:hover {
   padding: 0 40px;
 }
 
-.header > div {
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.hear-content > div {
   /* background-color: blueviolet; */
   display: flex;
   justify-content: space-between;
   width: 280px;
+}
+
+.input-header-search {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  width: 300px;
+}
+
+.header-character,
+.header-comics,
+.header-favoris {
+  color: white;
+  border: solid 1px red;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header-character:hover,
+.header-comics:hover,
+.header-favoris:hover {
+  background-color: red;
+}
+
+.header-character:focus,
+.header-comics:focus,
+.header-favoris:focus {
+  background-color: red;
 }
 
 /* ---------------- HOME ----------------- */
@@ -53,13 +88,13 @@ button:hover {
   margin-top: 50px;
 }
 .character-link > div {
-  background-color: lightblue;
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 350px;
   height: 430px;
-  border: solid 1px black;
+  border: solid 1px #f2f2f2;
   margin-bottom: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -86,13 +121,14 @@ button:hover {
 
 .character-comic {
   height: 300px;
-  width: 200px;
+  width: 350px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .character-link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .character-name {
@@ -144,13 +180,20 @@ button:hover {
 
 /* ------------------------- CHARACTER -------------------- */
 
+/* .container-character-id {
+  background-image: url('./assets/img/avengers-un-nouveau-film-va-voir-le-jour.jpeg');
+} */
+
 .character {
-  /* background-color: green; */
+  background-color: black;
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
   margin-bottom: 50px;
   height: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 100px auto;
 }
 
 .character-view {
@@ -163,25 +206,42 @@ button:hover {
 }
 .character-single {
   height: 350px;
-  width: 250px;
+  width: 300px;
   object-fit: cover;
+  border-radius: 7px;
+}
+
+.character-name-id {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.character-description-id {
+  color: white;
+  text-align: justify;
 }
 
 .character-carrousel {
+  background-color: #f2f2f2;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   overflow: scroll;
   width: 800px;
-  border: solid 3px red;
+  /* border: solid 3px red; */
   border-radius: 10px;
   padding: 20px 20px;
 }
 
 .character-carrousel > div {
+  border-bottom: solid 1px #d8d8d8;
   display: flex;
   height: 150px;
+  padding-bottom: 10px;
   margin-bottom: 10px;
 }
 
@@ -222,11 +282,11 @@ button:hover {
 
 .comics > div {
   box-sizing: border-box;
-  background-color: #f2f2f2;
+  background-color: red;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid 1px black;
+  border: solid 1px #f2f2f2;
   width: 400px;
   margin-bottom: 30px;
   padding: 20px 10px;
@@ -234,9 +294,10 @@ button:hover {
 }
 
 .comic-page-pic {
-  height: 400px;
-  width: 300px;
-  object-fit: contain;
+  height: 520px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 7px;
 }
 
 .comic-title {
@@ -247,6 +308,7 @@ button:hover {
 
 .comic-description {
   text-align: justify;
+  width: 350px;
 }
 
 .fav-comics-button {
@@ -297,36 +359,52 @@ button:hover {
 }
 
 /* ------------- FAVORIS ---------------- */
+
 .favoris {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 30px auto;
+  margin: 100px auto;
 }
 
 .favoris > div {
   box-sizing: border-box;
-  background-color: green;
+  /* background-color: black; */
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 310px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-.fav-name {
+.fav-character {
+  background-color: black;
+}
+
+.fav-comic {
+  background-color: red;
+}
+
+.fav-name,
+.fav-comic-title {
+  color: white;
   margin-top: 10px;
   font-weight: bold;
 }
-.fav-description {
+.fav-description,
+.fav-comic-description {
+  color: white;
   margin-top: 10px;
   text-align: justify;
 }
 
+.fav-comic-page-pic,
 .favoris-pic {
-  height: 400px;
-  width: 300px;
+  box-sizing: border-box;
+  height: 350px;
+  width: 280px;
   object-fit: cover;
+  border-radius: 7px;
 }
