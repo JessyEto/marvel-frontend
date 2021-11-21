@@ -1,0 +1,9 @@
+/* ----------------------- FOOTER -------------------- */
+.footer {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.footer > span {
+  color: red;
+}

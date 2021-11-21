@@ -6,6 +6,7 @@ import axios from 'axios';
 // Import of page and components
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import Character from './pages/Character/Character';
 import Comics from './pages/Comics/Comics';
 import Favoris from './pages/Favoris/Favoris';
@@ -121,6 +122,7 @@ const App = () => {
           }
         />
       </Routes>
+      <Footer />
     </Router>
   );
 };
