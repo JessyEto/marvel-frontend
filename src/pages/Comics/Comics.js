@@ -1,3 +1,6 @@
+import './comics.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Comics = ({
   dataToSearch,
   isLoading,
@@ -29,13 +32,15 @@ const Comics = ({
         {dataToSearch.results.map((elem) => {
           return (
             <div key={elem._id}>
-              <img
-                className="comic-page-pic"
-                src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
-                alt="comic-page-pic"
-              />
-              <p className="comic-title">{elem.title}</p>
-              <p className="comic-description">{elem.description}</p>
+              <div>
+                <img
+                  className="comic-page-pic"
+                  src={`${elem.thumbnail.path}.${elem.thumbnail.extension}`}
+                  alt="comic-page-pic"
+                />
+                <p className="comic-title">{elem.title}</p>
+                <p className="comic-description">{elem.description}</p>
+              </div>
               <p
                 className="fav-comics-button"
                 onClick={() => {
@@ -44,6 +49,9 @@ const Comics = ({
                   setFavComics(newFavComicTab);
                 }}
               >
+                <span>
+                  <FontAwesomeIcon icon="heart" />
+                </span>{' '}
                 Add to favoris
               </p>
             </div>

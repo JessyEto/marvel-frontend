@@ -1,6 +1,9 @@
-import logoMarvel from '../assets/img/logoMarvelHD.png';
+import '../Header/header.css';
+import logoMarvel from '../../assets/img/logoMarvelHD.png';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Header = ({ setSearchValue, setSearchCharacter }) => {
   const location = useLocation();
 
@@ -20,13 +23,17 @@ const Header = ({ setSearchValue, setSearchCharacter }) => {
         <Link to="/">
           <img className="logo-site" src={logoMarvel} alt="logo-site-marvel" />
         </Link>
-
-        <input
-          className="input-header-search"
-          type="text"
-          placeholder="Find your character ou comic"
-          onChange={handleSearch}
-        />
+        <div>
+          <span className="search-icone">
+            <FontAwesomeIcon icon="search" />
+          </span>
+          <input
+            className="input-header-search"
+            type="text"
+            placeholder="Find your character or comic"
+            onChange={handleSearch}
+          />
+        </div>
 
         <div>
           <Link to="/">

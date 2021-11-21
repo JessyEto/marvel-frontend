@@ -1,3 +1,4 @@
+import '../Favoris/favoris.css';
 const Favoris = ({ favCharacter, favComics }) => {
   // console.log(favCharacter);
   return (
@@ -39,5 +40,3 @@ const Favoris = ({ favCharacter, favComics }) => {
 };
 
 export default Favoris;
-
-// {JSON.parse(favElem).name}

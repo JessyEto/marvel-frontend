@@ -4,11 +4,16 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // Import of page and components
-import Home from './pages/Home';
-import Header from './components/Header';
-import Character from './pages/Character';
-import Comics from './pages/Comics';
-import Favoris from './pages/Favoris';
+import Home from './pages/Home/Home';
+import Header from './components/Header/Header';
+import Character from './pages/Character/Character';
+import Comics from './pages/Comics/Comics';
+import Favoris from './pages/Favoris/Favoris';
+
+// Import fontawesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch, faHeart } from '@fortawesome/free-solid-svg-icons';
+library.add(faSearch, faHeart);
 
 const App = () => {
   // State to store data received after server been called
@@ -33,7 +38,9 @@ const App = () => {
   );
 
   //  state for comics Favoris
-  const [favComics, setFavComics] = useState([]);
+  const [favComics, setFavComics] = useState(
+    JSON.parse(localStorage.getItem('myComic')) || []
+  );
 
   // Use effect for Character favoris
   useEffect(() => {

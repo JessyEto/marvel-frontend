@@ -1,4 +1,6 @@
+import '../Home/home.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Home = ({
   dataCharacters,
@@ -47,6 +49,9 @@ const Home = ({
                   setFavCharacter(newFavCharTab);
                 }}
               >
+                <span>
+                  <FontAwesomeIcon icon="heart" />{' '}
+                </span>
                 Add to favoris
               </p>
             </div>

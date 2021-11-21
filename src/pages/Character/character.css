@@ -1,0 +1,86 @@
+/* ------------------------- CHARACTER -------------------- */
+
+/* .container-character-id {
+  background-image: url('./assets/img/avengers-un-nouveau-film-va-voir-le-jour.jpeg');
+} */
+
+.character {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 100px auto;
+}
+
+.character-view {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: solid 1px black; */
+  width: 300px;
+}
+.character-single {
+  height: 350px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.character-name-id {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.character-description-id {
+  color: white;
+  text-align: justify;
+}
+
+.character-carrousel {
+  background-color: #f2f2f2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow: scroll;
+  width: 800px;
+  /* border: solid 3px red; */
+  border-radius: 10px;
+  padding: 20px 20px;
+}
+
+.character-carrousel > div {
+  border-bottom: solid 1px #d8d8d8;
+  display: flex;
+  height: 150px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.comic-pic {
+  height: 150px;
+  width: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.character-carrousel > div > div {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.comic-char-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

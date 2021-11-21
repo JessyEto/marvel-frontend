@@ -1,0 +1,54 @@
+/* ------------- FAVORIS ---------------- */
+
+.favoris {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 100px auto;
+}
+
+.favoris > div {
+  box-sizing: border-box;
+  /* background-color: black; */
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  overflow: scroll;
+  width: 300px;
+  height: 500px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.fav-character {
+  background-color: black;
+}
+
+.fav-comic {
+  background-color: red;
+}
+
+.fav-name,
+.fav-comic-title {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.fav-description,
+.fav-comic-description {
+  color: white;
+  margin-top: 10px;
+  text-align: justify;
+}
+
+.fav-comic-page-pic,
+.favoris-pic {
+  box-sizing: border-box;
+  height: 350px;
+  width: 280px;
+  object-fit: cover;
+  border-radius: 7px;
+}

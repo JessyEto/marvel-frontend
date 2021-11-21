@@ -1,3 +1,4 @@
+import '../Character/character.css';
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';

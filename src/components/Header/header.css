@@ -1,0 +1,67 @@
+/* ------------ HEADER --------------- */
+
+.logo-site {
+  height: 40px;
+  border-radius: 2px;
+}
+
+.hear-content {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 40px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.hear-content > div {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
+}
+
+.search-icone {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #757575;
+  border-radius: 5px 0px 0px 5px;
+  padding: 5px 0px 5px 5px;
+}
+
+.input-header-search {
+  padding: 5px 10px;
+  border-radius: 0px 5px 5px 0px;
+  border: none;
+  width: 300px;
+}
+
+.header-character,
+.header-comics,
+.header-favoris {
+  color: white;
+  border: solid 1px red;
+  background-color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header-character:hover,
+.header-comics:hover,
+.header-favoris:hover {
+  background-color: red;
+}
+
+.header-character:focus,
+.header-comics:focus,
+.header-favoris:focus {
+  background-color: red;
+}
